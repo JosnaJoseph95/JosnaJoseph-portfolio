@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Josna Joseph ,  Customer Success and Strategic Account Management professional.">
+  <title>Josna Joseph | Customer Success & Strategic Account Management</title>
+  <style>
+    :root {
+      --ink: #202a2b;
+      --muted: #657273;
+      --paper: #fafaf8;
+      --surface: #ffffff;
+      --line: #e5e9e6;
+      --accent: #56756d;
+      --accent-dark: #36574e;
+      --soft: #edf2ee;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--paper); font-family: var(--sans); line-height: 1.65; }
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: var(--accent-dark); }
+    .wrap { width: min(1080px, calc(100% - 44px)); margin: 0 auto; }
+    header { position: sticky; top: 0; z-index: 10; background: rgba(250,250,248,.92); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(229,233,230,.8); }
+    .nav { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { font-weight: 700; letter-spacing: .02em; }
+    .navlinks { display: flex; gap: 25px; color: var(--muted); font-size: .9rem; }
+    .hero { padding: 112px 0 100px; display: grid; grid-template-columns: 1.35fr .65fr; gap: 70px; align-items: center; }
+    .eyebrow { color: var(--accent-dark); text-transform: uppercase; letter-spacing: .16em; font-size: .72rem; font-weight: 700; }
+    h1 { font: 500 clamp(3.1rem, 7vw, 5.8rem)/1.03 var(--serif); letter-spacing: -.045em; margin: 20px 0 24px; }
+    .hero p { max-width: 650px; color: var(--muted); font-size: 1.12rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 12px 19px; border-radius: 3px; border: 1px solid var(--accent-dark); font-size: .9rem; font-weight: 650; transition: .2s; }
+    .btn.primary { background: var(--accent-dark); color: white; }
+    .btn.primary:hover { background: #29473f; color: white; }
+    .btn.secondary { color: var(--accent-dark); }
+    .hero-side { display: grid; justify-items: center; gap: 18px; }
+    .hero-card { width: 100%; background: var(--soft); padding: 32px; border-radius: 4px; }
+    .hero-card .big { font: 500 3.3rem/1 var(--serif); color: var(--accent-dark); }
+    .hero-card p { font-size: .92rem; margin: 10px 0 26px; }
+    .hero-card p:last-child { margin-bottom: 0; }
+    section { padding: 82px 0; border-top: 1px solid var(--line); }
+    .section-head { display: grid; grid-template-columns: .7fr 1.3fr; gap: 50px; margin-bottom: 42px; }
+    h2 { font: 500 clamp(2.2rem, 4vw, 3.4rem)/1.1 var(--serif); letter-spacing: -.03em; margin: 8px 0; }
+    .intro { color: var(--muted); max-width: 650px; margin: 8px 0 0; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+    .panel { background: var(--surface); border: 1px solid var(--line); padding: 28px; border-radius: 4px; }
+    .panel h3, .case h3 { margin: 0 0 10px; font-size: 1.05rem; }
+    .panel p { color: var(--muted); margin: 0; }
+    .metrics { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .metric { background: var(--soft); padding: 24px; }
+    .metric strong { display: block; font: 500 2.6rem/1.1 var(--serif); color: var(--accent-dark); }
+    .metric span { display: block; color: var(--muted); font-size: .88rem; margin-top: 8px; }
+    .case-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .case { background: var(--surface); border: 1px solid var(--line); padding: 30px; border-radius: 4px; }
+    .case .number { color: var(--accent); font-size: .75rem; font-weight: 700; letter-spacing: .12em; }
+    .case p { color: var(--muted); margin: 9px 0 0; }
+    .case .result { margin-top: 20px; padding-top: 17px; border-top: 1px solid var(--line); color: var(--accent-dark); font-weight: 650; }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 10px; }
+    .pill { padding: 9px 14px; border: 1px solid var(--line); background: white; color: #485554; font-size: .88rem; border-radius: 99px; }
+    .timeline { border-left: 1px solid #cbd6d0; margin-left: 7px; padding-left: 27px; display: grid; gap: 28px; }
+    .role { position: relative; }
+    .role:before { content: ""; position: absolute; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); left: -32px; top: 8px; }
+    .role h3 { margin: 0; font-size: 1.08rem; }
+    .role .meta { color: var(--accent-dark); font-size: .88rem; margin: 2px 0 8px; }
+    .role p { color: var(--muted); margin: 0; max-width: 760px; }
+    .contact { background: #243a35; color: white; border: 0; }
+    .contact .eyebrow { color: #b9d0c4; }
+    .contact h2 { max-width: 650px; }
+    .contact p { color: #d1ddd7; max-width: 620px; }
+    .contact .btn.primary { background: #f6f7f3; color: #243a35; border-color: #f6f7f3; }
+    .contact .btn.secondary { color: white; border-color: #a7bdb2; }
+    footer { padding: 24px 0; color: var(--muted); font-size: .82rem; display: flex; justify-content: space-between; gap: 15px; }
+    @media (max-width: 760px) {
+      .nav { align-items: flex-start; padding: 18px 0; flex-direction: column; gap: 12px; }
+      .navlinks { flex-wrap: wrap; gap: 14px; font-size: .82rem; }
+      .hero { padding: 76px 0 68px; grid-template-columns: 1fr; gap: 35px; }
+      .section-head { grid-template-columns: 1fr; gap: 12px; }
+      .about-grid, .case-grid { grid-template-columns: 1fr; }
+      section { padding: 62px 0; }
+      footer { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top">JOSNA JOSEPH</a>
+    <nav class="navlinks" aria-label="Main navigation">
+      <a href="#about">About</a><a href="#work">Experience</a><a href="#impact">Impact</a><a href="#approach">Approach</a><a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <div>
+      <div class="eyebrow">Customer Success · Strategic Account Management</div>
+      <h1>Strong relationships.<br>Meaningful outcomes.</h1>
+      <p>I’m Josna, a Customer Success professional focused on helping B2B SaaS customers get lasting value from the products they use. I bring together customer relationships, account management, onboarding and adoption to create better customer experiences and stronger business outcomes.</p>
+      <div class="actions">
+        <a class="btn primary" href="#work">Explore my experience</a>
+        <a class="btn secondary" href="#contact">Get in touch</a>
+      </div>
+    </div>
+    <div class="hero-side">
+      <aside class="hero-card">
+      <div class="eyebrow">My focus</div>
+      <div class="big">01</div><p>Customer relationships built on trust, clarity and consistent follow through.</p>
+      <div class="big">02</div><p>Account strategies that connect customer goals with product value.</p>
+      <div class="big">03</div><p>Onboarding and adoption programs designed to improve customer outcomes.</p>
+      </aside>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <div><div class="eyebrow">01 / About</div><h2>Customer first, commercially aware.</h2></div>
+        <p class="intro">My experience spans customer success, account research and content strategy. Across these roles, I’ve consistently worked at the intersection of customer needs, internal teams and delivery, making sure expectations are clear and work translates into value for the customer.</p>
+      </div>
+      <div class="about-grid">
+        <div class="panel">
+          <h3>How I work</h3>
+          <p>I value thoughtful communication, a clear understanding of customer goals and practical problem solving. I enjoy building relationships over time, identifying friction in the customer journey and bringing the right people together to resolve it.</p>
+        </div>
+        <div class="panel">
+          <h3>What I bring</h3>
+          <p>Experience managing Enterprise and Small Business accounts in a B2B SaaS environment, improving onboarding and adoption, coordinating cross functionally, and using customer feedback to inform product and customer experience improvements.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="impact">
+    <div class="wrap">
+      <div class="section-head">
+        <div><div class="eyebrow">02 / Selected impact</div><h2>Progress you can measure.</h2></div>
+        <p class="intro">A snapshot of outcomes from my Customer Success work at Vieu. The adoption improvement came from tailoring the experience to different users, with training and walkthroughs providing additional support.</p>
+      </div>
+      <div class="metrics">
+        <div class="metric"><strong>23%</strong><span>Increase in customer satisfaction, measured through customer surveys and feedback scores.</span></div>
+        <div class="metric"><strong>40%</strong><span>Improvement in product adoption by understanding what each user needed from the product and tailoring the experience accordingly. Training and product walkthroughs reinforced this approach.</span></div>
+      </div>
+      <div class="about-grid" style="margin-top:18px">
+        <div class="panel"><h3>How I approached adoption</h3><p>I looked beyond the account as a single group. I considered what each user needed to achieve, grouped users by the value they expected from the product and tailored the guidance to those needs.</p></div>
+        <div class="panel"><h3>How I supported the change</h3><p>I combined relevant onboarding materials and self paced Loom videos with training, setup calls and product walkthroughs. I also brought customer feedback to Product and Engineering when the experience needed to change.</p></div>
+      </div>
+      <div class="case-grid" style="margin-top:18px">
+        <article class="case">
+          <div class="number">CASE STUDY / 01</div>
+          <h3>Making onboarding more relevant to each customer</h3>
+          <p><strong>The challenge:</strong> The existing onboarding process followed a one size fits all model. Every customer received an initial onboarding call followed by follow up calls. A small customer with five users and an Enterprise customer with more than twenty users had very different needs, but the experience did not reflect those differences. Within each account, users also needed different things from the product.</p>
+          <p><strong>My approach:</strong> I created a central onboarding repository with supporting materials and Loom videos so customers could learn at their own pace. I moved away from treating the account as one audience. Instead, I considered what each user needed to achieve with the product, grouped users around the value they were looking for and adapted the guidance to those needs. This made onboarding more relevant to the person using the product, as well as to the size and complexity of the account.</p>
+          <p><strong>Product collaboration:</strong> I worked with the Engineering team to explain why different users needed different views of the product. This contributed to the introduction of pinned views, allowing each user to pin and update the information relevant to their work without being distracted by other users’ activity.</p>
+          <p><strong>Implementation:</strong> The onboarding journey typically took four to six weeks. The product update took more than a quarter to deliver, so the repository and learning materials helped customers make progress while the product enhancement was being developed.</p>
+          <div class="result">Outcome: A more personalised onboarding experience and faster progress towards first value. Customer satisfaction increased by 23%, measured through customer surveys and feedback scores. The tailored approach to individual user needs contributed to a 40% improvement in product adoption, with training materials and walkthroughs providing additional support.</div>
+        </article>
+        <article class="case">
+          <div class="number">CASE STUDY / 02</div>
+          <h3>Helping customers see the full value of the product</h3>
+          <p><strong>The challenge:</strong> Downloadable files were introduced as a quick way for busy customers to access summary information. Some customers began relying on these files instead of returning to the platform. They missed ongoing updates and other capabilities available through the product, leading to reduced usage.</p>
+          <p><strong>What I identified:</strong> The adoption gap was largely an awareness issue. Customers did not fully understand the difference between a static download and the continuously updated experience available on the platform.</p>
+          <p><strong>My approach:</strong> I sent informative emails, shared training videos, conducted setup calls and delivered product walkthroughs. I also organised a session with the Head of Product and Engineering so customers could hear directly about the platform and its capabilities.</p>
+          <p><strong>Customer engagement:</strong> These touchpoints helped customers understand the broader value of the platform and gave them opportunities to ask questions and get practical guidance on using it in their regular workflow.</p>
+          <div class="result">Outcome: Product usage increased and customer engagement improved. Customers developed a better understanding of the ongoing value of the platform, which supported retention. This education work reinforced the wider effort to help customers understand the product and use more of its capabilities. The 40% adoption improvement is attributed to the broader approach of understanding and catering to individual user needs, supported by training and walkthroughs.</div>
+        </article>
+        <article class="case">
+          <div class="number">CASE STUDY / 03</div>
+          <h3>Building strategic relationships across customer accounts</h3>
+          <p><strong>The challenge:</strong> Enterprise and SMB customers needed different engagement strategies. Enterprise relationships often began with Directors who identified the right users. SMB relationships involved CEOs, CROs, VPs and department heads alongside the people using the product day to day.</p>
+          <p><strong>My approach:</strong> I adapted communication to the account and the people involved. For Enterprise customers, I typically shared weekly updates with Directors during onboarding, then moved to twice monthly or monthly updates depending on the number of users and account activity. For SMB customers, I maintained twice monthly updates with senior leaders such as CEOs and department heads while staying connected to the people using the product day to day.</p>
+          <p><strong>Building multiple champions:</strong> I work to develop relationships with multiple stakeholders in each organisation. This reduces dependency on one contact, creates continuity when a champion changes roles and can open a relationship with a new organisation when an existing champion moves companies.</p>
+          <p><strong>Internal collaboration:</strong> I focus on clear handovers from Sales, realistic timelines with Product and Engineering, understanding team capacity and communicating expectations honestly. Customer feedback helps guide what we prioritise and how we respond.</p>
+          <div class="result">Outcome: A more structured account engagement model, stronger stakeholder relationships and better coordination between customers and internal teams.</div>
+        </article>
+        <article class="case">
+          <div class="number">CASE STUDY / 04</div>
+          <h3>Rebuilding trust and retaining an at risk customer</h3>
+          <p><strong>The challenge:</strong> An SMB customer became quiet after its department head moved to another company. Although an introduction had been made to the new contact, the new stakeholder was reluctant to adopt the product into their existing workflow. Calls were repeatedly postponed and participation declined.</p>
+          <p><strong>My approach:</strong> Rather than continuing to request meetings, I prepared an informative account summary showing how the company had benefited from the product. I then shared a focused preview of how the new stakeholder could use the platform to speed up specific aspects of their own work.</p>
+          <p><strong>Rebuilding the relationship:</strong> I focused on demonstrating practical value and making the communication relevant to the new stakeholder, rather than simply asking them to use the product. This helped me build trust and restart the conversation.</p>
+          <div class="result">Outcome: The customer continued using the product and renewed its subscription. I helped rebuild engagement with an account that had become difficult to reach.</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="approach">
+    <div class="wrap">
+      <div class="section-head">
+        <div><div class="eyebrow">03 / My approach</div><h2>Customer success is an ongoing partnership.</h2></div>
+        <p class="intro">I look at the full customer journey, from setting expectations at the start to building engagement, addressing issues and strengthening long term relationships.</p>
+      </div>
+      <div class="pill-list">
+        <span class="pill">Customer Success Management</span><span class="pill">Enterprise Account Management</span>
+        <span class="pill">Small Business Accounts</span><span class="pill">Strategic Account Planning</span>
+        <span class="pill">Customer Onboarding</span><span class="pill">Product Adoption</span>
+        <span class="pill">Customer Retention</span><span class="pill">Customer Satisfaction</span>
+        <span class="pill">Stakeholder Management</span><span class="pill">Cross functional Collaboration</span>
+        <span class="pill">Issue Resolution and Escalations</span><span class="pill">Customer Feedback Analysis</span>
+        <span class="pill">KPI Tracking & Reporting</span><span class="pill">Time to Value</span>
+        <span class="pill">Sales and Customer Success Alignment</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="wrap">
+      <div class="section-head">
+        <div><div class="eyebrow">04 / Experience</div><h2>A career built around customers.</h2></div>
+        <p class="intro">My roles have had a consistent thread: understanding client needs, managing relationships and helping teams deliver work that supports customer goals.</p>
+      </div>
+      <div class="timeline">
+        <article class="role">
+          <h3>Customer Success Lead · Vieu</h3>
+          <div class="meta">January 2024 to Present · Remote</div>
+          <p>Manage approximately 35 to 40 Enterprise and Small Business accounts, including active, inactive and at risk customers. Lead onboarding and adoption initiatives, identify growth opportunities and support retention and customer communication.</p>
+        </article>
+        <article class="role">
+          <h3>Account Research Lead · Vieu</h3>
+          <div class="meta">August 2022 to December 2023 · Remote</div>
+          <p>Worked with customers to improve product usage and engagement, coordinated and guided the deliverables of eight associates, resolved issues and partnered with senior management and technology teams.</p>
+        </article>
+        <article class="role">
+          <h3>Content Specialist · Olive Group (Upskills)</h3>
+          <div class="meta">March 2021 to August 2022 · Trivandrum, Kerala</div>
+          <p>Developed B2B SaaS content strategies to support adoption, engagement and retention; collaborated with Sales on onboarding; and managed client relationships and content delivery.</p>
+        </article>
+        <article class="role">
+          <h3>Senior Content Writer · The Digitants</h3>
+          <div class="meta">August 2020 to March 2021 · Kochi, Kerala</div>
+          <p>Identified customer needs, researched industry pain points and managed client accounts and content deliverables.</p>
+        </article>
+        <article class="role">
+          <h3>Content Writer · Goinorth Films</h3>
+          <div class="meta">August 2019 to March 2020 · Kochi, Kerala</div>
+          <p>Created brand and marketing content, contributed to social media strategy and managed client relationships.</p>
+        </article>
+        <article class="role">
+          <h3>Content Editor to Web · Mindworks Global Media Services</h3>
+          <div class="meta">May 2018 to May 2019 · Noida, Uttar Pradesh</div>
+          <p>Edited, proofread and fact checked editorial content, coordinating timely delivery against client expectations.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div><div class="eyebrow">05 / Education</div><h2>Learning & communication.</h2></div>
+        <p class="intro">A foundation in journalism that continues to shape how I listen, research, communicate and translate complex information into clear messages.</p>
+      </div>
+      <div class="about-grid">
+        <div class="panel"><h3>Post Graduate Diploma in Journalism</h3><p>Manorama School of Communication · 2017to2018</p></div>
+        <div class="panel"><h3>B.A. in Journalism</h3><p>Madras Christian College · 2013to2016</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <div class="eyebrow">06 / Contact</div>
+      <h2>Let’s talk about creating better customer outcomes.</h2>
+      <p>If you’re looking for someone who values customer relationships, thoughtful account management and measurable progress, I’d be happy to connect.</p>
+      <div class="actions">
+        <a class="btn primary" href="mailto:joejo1995@gmail.com">Email me</a>
+        <a class="btn secondary" href="https://www.linkedin.com/in/josna-joseph-176b77125/" target="_blank" rel="noopener">Connect on LinkedIn</a>
+        <a class="btn secondary" href="Josna_Joseph_Resume.pdf" target="_blank" rel="noopener">View resume</a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="wrap">
+  <span>© <span id="year"></span> Josna Joseph</span>
+  <span>Customer Success · Strategic Account Management</span>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
